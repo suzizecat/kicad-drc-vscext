@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "KiCAD DRC",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#litteral"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+			{
+				"name": "keyword.control.kicaddrc",
+				"match": "\\b(selector|rule|version)\\b"
+			},
+			{
+				"name": "entity.name.function.match.kicaddrc",
+				"match": "\\b(match_netclass|match_type|match_layer|match_all|match_area)\\b"
+			},
+			{
+				"name": "keyword.type.kicaddrc",
+				"match": "\\b(track|via|micro_via|blind_via|pad|zone|text|graphic|board_edge|hole|npth|pth)\\b"
+			},
+			{
+				"name": "entity.name.function.rule.kicaddrc",
+				"match": "\\b(allow|clearance|annulus_width|track_width|hole|priority)\\b"
+			}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.kicaddrc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kicaddrc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"litteral" : 
+		{
+			"name": "constant.numeric.kicaddrc",
+			"match" : "\\b[0-9]*([0-9]|\\.[0-9]+)\\b"
+		}
+	},
+	"scopeName": "source.kicad-drc"
+}

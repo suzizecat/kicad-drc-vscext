@@ -1,0 +1,25 @@
+{
+    "name": "kicad-drc-rules",
+    "displayName": "kicad-drc-rules",
+    "description": "Syntax Highlight for KiCAD DRC files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "kicaddrc",
+            "aliases": ["KiCAD DRC", "kicaddrc"],
+            "extensions": ["drc-rules"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "kicaddrc",
+            "scopeName": "source.kicad-drc",
+            "path": "./syntaxes/kicaddrc.tmLanguage.json"
+        }]
+    }
+}
